@@ -1,10 +1,15 @@
 ﻿#include <iostream>
 #include <string>
+#include <fstream>
+#include <cstdlib>
+//#include <stdio.h>
 
 using namespace std;
 
+
 class Subject {
 public:
+
     void przedmoioty(){
         //wypisywanie przedmiotów
         string tab_przedmiotow[10];
@@ -27,11 +32,16 @@ public:
 
     void wyborprzedmiotu();
 
+    void sredniazprzedmiotow();
+
+
+
 };
 
 class OpcjeMenu {
 public:
     //poszcegulne opcje wyboru z menu
+
     void wyborOpcji_1() {
         system("cls");
 
@@ -41,8 +51,11 @@ public:
     }
 
     void wyborOpcji_2() {
-        //opecja druga
-        cout << "2";
+        system("cls");
+
+        Subject d;
+        d.przedmoioty();
+        //d.sredniazprzedmiotow();
     }
 
     void wyborOpcji_3() {
@@ -61,8 +74,8 @@ public:
     void menu(){
         //wypianie mednu
         cout << "1. Dodaj ocene" << endl; 
-        cout << "2. Wypisz srednia"<<endl;;
-        cout << "3. srednia ze wszystkeigo"<<endl;
+        cout << "2. Wypisz srednia z wybranego przedmiotu"<<endl;;
+        cout << "3. Srednia ze wszystkeigo"<<endl;
         cout << "4. Wypisz oceny z danego przedmiotu"<<endl;
         cout << "5. Zakoncz program" << endl;
     }
@@ -103,7 +116,6 @@ int main()
     wstep.wyborZmenu();
 
 
-
     getchar();
     return 0;
 }
@@ -131,16 +143,36 @@ void Subject::wyborprzedmiotu() {
 
     if (numer_przedmiotu == 1) {
         int oceny_matematyka[1];
+        int j = 0;
         for (int j = 1; j <= ilosc_ocen; j++) {
             cin >> ocena_czastkowa_matematyka;
             oceny_matematyka[j] = ocena_czastkowa_matematyka;
 
-
         }
+
+        //int ilosc_matma = ilosc_ocen;
+
         cout << "Oceny matematyka: "<<endl;
         for (int k = 1; k <= ilosc_ocen; k++) {
             cout << oceny_matematyka[k] << endl;
         }
+
+
+
+        //srednia
+        int suma = 0;
+        int srednia = 0;
+        for (int l = 1; l <= ilosc_ocen; l++) {
+            suma += oceny_matematyka[l];
+            srednia = suma / ilosc_ocen;
+        }
+
+        fstream sredniaMatematyka;
+        sredniaMatematyka.open("srednie/sredniaMatematyka.txt", ios::out);
+        sredniaMatematyka << srednia;
+        sredniaMatematyka.close();
+        //srednia_mat = srednia;
+        //cout << srednia << endl;
 
         string doMenu;
         cout << "kliknij 'M' zeby wrocic do menu";
@@ -152,6 +184,7 @@ void Subject::wyborprzedmiotu() {
             a.menu();
             a.wyborZmenu();
         }
+
     }
     else if (numer_przedmiotu == 2) {
         int oceny_polski[1];
@@ -359,7 +392,7 @@ void Subject::wyborprzedmiotu() {
         }
 
         string doMenu;
-        cout << "kliknij 'M' zeby wrocic do menu";
+        cout << "kliknij 'M' zeby wrocic do menu: ";
         cin >> doMenu;
         system("cls");
 
@@ -368,6 +401,42 @@ void Subject::wyborprzedmiotu() {
             a.menu();
             a.wyborZmenu();
         }
+    }
+}
+
+
+void Subject::sredniazprzedmiotow() {
+
+    int wybor_uzyt;
+    cout << "Twoj wybor: ";
+    cin >> wybor_uzyt;
+
+    if (wybor_uzyt == 1) {
+        //int smat;
+        //int nrlini;
+        //int srednia;
+        //fstream sredniaMatematyka;
+        //sredniaMatematyka.open("srednie/sredniaMatematyka.txt", ios::in);
+        //if (sredniaMatematyka.good() == false) {
+        //    
+        //    while (cin.getline(cin.sredniaMatematyka, smat)) {
+        //        switch (nrlini)
+        //        {
+        //        case 1: srednia = smat; break;
+        //        }
+        //    }
+        //}
+        //   sredniaMatematyka.close();
+    
+        int znak = 1;
+        FILE* sredniaMatematyka;
+        sredniaMatematyka = fopen("sredniaMatematyka.txt", "a+");
+        fscanf(sredniaMatematyka, "%i", znak);
+        fclose(sredniaMatematyka); //zamknięcie pliku
+
+        for (int i = 0; i < 2; i++)
+            cout << znak;
+        
     }
 
 }
