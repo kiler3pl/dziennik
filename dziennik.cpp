@@ -33,8 +33,12 @@ public:
 
     void sredniazprzedmiotow();
 
+    void sredniazewszystkiego();
+
+    void wypiszocenyzdanegoprzedmiotu();
+
 private:
-    int sredniaMat = 0;
+    float sredniaMat = 0;
     int sredniaPol = 0;
     int sredniaAng = 0;
     int sredniaBiol = 0;
@@ -70,8 +74,7 @@ public:
 
     void wyborOpcji_3()
     {
-        // opecja druga
-        cout << "3";
+        p.sredniazewszystkiego();
     }
 
     void wyborOpcji_4()
@@ -153,7 +156,7 @@ void Subject::wyborprzedmiotu()
     int ocena_czastkowa_wos;
 
     int numer_przedmiotu;
-    int ilosc_ocen;
+    float ilosc_ocen;
 
     cout << "Wybierz numer przedmiotu:  ";
     cin >> numer_przedmiotu;
@@ -182,7 +185,7 @@ void Subject::wyborprzedmiotu()
 
 
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaMat = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -209,7 +212,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaPol = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -233,7 +236,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaAng = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -257,7 +260,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaBiol = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -281,7 +284,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaGeogr = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -305,7 +308,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaWF = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -329,7 +332,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaFiz = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -353,7 +356,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaProg_Obiekt = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -377,7 +380,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaHis = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -401,7 +404,7 @@ void Subject::wyborprzedmiotu()
         }
         cout<<endl;
         // srednia
-        int suma = 0;
+        float suma = 0;
         sredniaWos = 0;
         for (int l = 1; l <= ilosc_ocen; l++)
         {
@@ -452,4 +455,57 @@ void Subject::sredniazprzedmiotow()
             break;
     }
     cout<<endl;
+}
+
+void Subject::sredniazewszystkiego() {
+    int ilosc_srednich = 0;
+    float suma_srednich = 0;
+
+    if (sredniaMat > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaPol > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaAng > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaBiol > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaGeogr > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaWF > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaFiz > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaProg_Obiekt > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaHis > 0) {
+        ilosc_srednich++;
+    }
+
+    if (sredniaWos > 0) {
+        ilosc_srednich++;
+    }
+    suma_srednich = (sredniaMat + sredniaPol + sredniaAng + sredniaBiol + sredniaGeogr + sredniaWF + sredniaFiz + sredniaProg_Obiekt + sredniaHis + sredniaWos) / ilosc_srednich;
+    cout << endl;
+    cout << "Srednia: " << suma_srednich << endl;
+    cout << endl;
+}
+
+void Subject::wypiszocenyzdanegoprzedmiotu() {
+    
 }
