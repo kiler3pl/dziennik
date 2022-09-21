@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <cstdlib>
 //#include <stdio.h>
@@ -163,7 +163,7 @@ void Subject::wyborprzedmiotu()
 
     if (numer_przedmiotu == 1)
     {
-        int oceny_matematyka[ilosc_ocen];
+        int* oceny_matematyka = new int [ilosc_ocen];
         int j = 0;
         for (int j = 1; j <= ilosc_ocen; j++)
         {
@@ -195,7 +195,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 2)
     {
-        int oceny_polski[ilosc_ocen];
+        int* oceny_polski = new int [ilosc_ocen];
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_polski;
@@ -219,7 +219,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 3)
     {
-        int oceny_ang[ilosc_ocen];
+        int* oceny_ang = new int [ilosc_ocen];
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_ang;
@@ -243,7 +243,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 4)
     {
-        int oceny_biologia[ilosc_ocen];
+        int* oceny_biologia = new int [ilosc_ocen];;
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_biologia;
@@ -267,7 +267,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 5)
     {
-        int oceny_geografia[ilosc_ocen];
+        int* oceny_geografia = new int [ilosc_ocen];;
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_geografia;
@@ -291,7 +291,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 6)
     {
-        int oceny_wf[ilosc_ocen];
+        int* oceny_wf = new int [ilosc_ocen];;
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_wf;
@@ -315,7 +315,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 7)
     {
-        int oceny_fizyka[ilosc_ocen];
+        int* oceny_fizyka = new int [ilosc_ocen];
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_fizyka;
@@ -339,7 +339,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 8)
     {
-        int oceny_prog_obiekt[ilosc_ocen];
+        int* oceny_prog_obiekt = new int [ilosc_ocen];;
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_prog_obiekt;
@@ -363,7 +363,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 9)
     {
-        int oceny_historia[ilosc_ocen];
+        int* oceny_historia = new int [ilosc_ocen];;
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_historia;
@@ -387,7 +387,7 @@ void Subject::wyborprzedmiotu()
     }
     else if (numer_przedmiotu == 10)
     {
-        int oceny_wos[ilosc_ocen];
+        int* oceny_wos = new int [ilosc_ocen];;
         for (int j = 1; j <= ilosc_ocen; j++)
         {
             cin >> ocena_czastkowa_wos;
